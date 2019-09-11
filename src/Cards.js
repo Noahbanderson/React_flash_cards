@@ -5,17 +5,17 @@ import Review from "./Review.js"
 const Cards = (props) => {
   
   return (
-    <div style={{textAlign: 'center'}}>
+    <div >
       <Grid columns={3} divided>
-        <Grid.Row>
+        <Grid.Row >
             {props.cards.map( card => (
-              <Grid.Column>
+              <Grid.Column  >
                 <div>
                   {card.showFront ? 
                     <Card 
                       onClick={() => props.toggleShowFunction(card)} 
                       header={card.front} 
-                      style={{padding: "10px"}}
+                      style={{padding: "10px", height: "125px"} }
                     >
                     <Card.Description as="h3">
                         {card.front}
@@ -26,7 +26,7 @@ const Cards = (props) => {
                     </Card>
                     :
                     <div>
-                      <Card  onClick={() => props.toggleShowFunction(card)} header={card.back} />
+                      <Card  onClick={() => props.toggleShowFunction(card)} header={card.back} style={{padding: "10px", height: "125px"} } />
                       <Button onClick={() => props.upCorrect(card) }>I Got it Right!</Button>
                       <Button onClick={() => props.upWrong(card) }>I Got it Wrong</Button>
                     </div> 
@@ -40,11 +40,11 @@ const Cards = (props) => {
             ))} 
         </Grid.Row>
       </Grid>
+      <hr/>
       <br/>
       <Review  cards={props.cards}/>
     </div>
-  )
+)
 }
-
 export default Cards
 

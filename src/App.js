@@ -7,9 +7,9 @@ class App extends React.Component {
 
   state = {
     cards: [
-      {id: 1, front: "How many planets are in the solar system?", back: "9", showFront: true, correct: 0, wrong: 0},
-      {id: 2, front: "How many great lakes are in North America?", back: "Five", showFront: true, correct: 0, wrong: 0},
-      {id: 3, front: "What is the capital of Utah?", back: "Salt Lake City", showFront: true, correct: 0, wrong: 0}
+      {id: 1, front: "How many planets are in the solar system?", back: "9, yes Pluto, we still love you", showFront: true, correct: 0, wrong: 0},
+      {id: 2, front: "How many great lakes are in North America?", back: "Five. I'm betting you didn't know. You sure you grew up in America?", showFront: true, correct: 0, wrong: 0},
+      {id: 3, front: "What is the capital of Utah?", back: "Salt Lake City, Just because you didn't get the first two right", showFront: true, correct: 0, wrong: 0}
     ]
   };
 
