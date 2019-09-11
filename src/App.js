@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from "semantic-ui-react";
+import { Container, Header } from "semantic-ui-react";
 import Cards from "./Cards.js";
 import CardForm from "./CardForm.js"
 
@@ -7,9 +7,9 @@ class App extends React.Component {
 
   state = {
     cards: [
-      {id: 1, front: "My question", back: "My answer", showFront: true, correct: 0, wrong: 0},
-      {id: 2, front: "My Goes here Question", back: "My Goes here Answer", showFront: true, correct: 0, wrong: 0},
-      {id: 3, front: "My Question is big", back: "My Answer is big", showFront: true, correct: 0, wrong: 0}
+      {id: 1, front: "How many planets are in the solar system?", back: "9", showFront: true, correct: 0, wrong: 0},
+      {id: 2, front: "How many great lakes are in North America?", back: "Five", showFront: true, correct: 0, wrong: 0},
+      {id: 3, front: "What is the capital of Utah?", back: "Salt Lake City", showFront: true, correct: 0, wrong: 0}
     ]
   };
 
@@ -103,7 +103,11 @@ class App extends React.Component {
     return (
       <div>
         <Container style={{margin: "25px"}}>
+          <Header>React Flash Cards</Header>
           <CardForm  addCardFunction={this.addCard}/>
+          <br/>
+          <hr/>
+          <br/>
           <Cards 
             upCorrect={this.upCorrect} 
             upWrong={this.upWrong} 
