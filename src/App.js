@@ -7,9 +7,27 @@ class App extends React.Component {
 
   state = {
     cards: [
-      {id: 1, front: "How many planets are in the solar system?", back: "9, yes Pluto, we still love you", showFront: true, correct: 0, wrong: 0},
-      {id: 2, front: "How many great lakes are in North America?", back: "Five. I'm betting you didn't know. You sure you grew up in America?", showFront: true, correct: 0, wrong: 0},
-      {id: 3, front: "What is the capital of Utah?", back: "Salt Lake City, Just because you didn't get the first two right", showFront: true, correct: 0, wrong: 0}
+      {id: 1, 
+        front: "How many planets are in the solar system?", 
+        back: "9, yes Pluto, we still love you", 
+        showFront: true, 
+        correct: 0, 
+        wrong: 0
+      },
+      {id: 2, 
+        front: "How many great lakes are in North America?", 
+        back: "Five. I'm betting you didn't know. You sure you grew up in America?", 
+        showFront: true, 
+        correct: 0, 
+        wrong: 0
+      },
+      {id: 3, 
+        front: "What is the capital of Utah?", 
+        back: "Salt Lake City, Just because you didn't get the first two right", 
+        showFront: true, 
+        correct: 0, 
+        wrong: 0
+      }
     ]
   };
 
@@ -41,7 +59,6 @@ class App extends React.Component {
     const front_back = card.showFront ? card.front : card.back
     const newcardface = prompt("How would you like to edit this?", front_back );
     
-    
     if (card.showFront === true) {
       card.front = newcardface
     } else if (card.showFront === false) {
@@ -51,9 +68,7 @@ class App extends React.Component {
     this.setState({
       cards: this.state.cards.map( icard => {
           if (icard.id === card.id) {
-            return {
-              ...card
-            }
+            return card
           }
           return icard
         }
@@ -63,12 +78,12 @@ class App extends React.Component {
   }
 
   deleteCard = (cardData) => {
-    const thing = this.state.cards.filter(card => card.id !== cardData.id)
-    this.setState({cards: thing})
+    const cards = this.state.cards.filter(card => card.id !== cardData.id)
+    this.setState({cards})
   }
 
   upCorrect = (card) => {
-    card.correct = card.correct + 1
+    card.correct += 1
     this.setState({
       cards: this.state.cards.map( icard => {
           if (icard.id === card.id) {
@@ -84,7 +99,7 @@ class App extends React.Component {
   };
 
   upWrong = (card) => {
-    card.wrong = card.wrong + 1
+    card.wrong += 1
     this.setState({
       cards: this.state.cards.map( icard => {
           if (icard.id === card.id) {
@@ -102,8 +117,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Container style={{margin: "25px"}}>
-          <Header>React Flash Cards</Header>
+        <Container style={{margin: "25px", textAlign: "center"}}>
+          <Header as="h1">React Flash Cards</Header>
           <CardForm  addCardFunction={this.addCard}/>
           <br/>
           <hr/>

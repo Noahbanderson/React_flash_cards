@@ -8,7 +8,6 @@ class CardForm extends React.Component {
     back: "",
   }
 
-
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value})
   };
@@ -39,7 +38,10 @@ class CardForm extends React.Component {
             value={this.state.back}
             onChange={this.handleChange}
           />
-          <Form.Button>Submit</Form.Button>
+          <div >
+            <br/>
+            <Form.Button>Submit</Form.Button>
+          </div>
         </Form.Group>
       </Form>
     )

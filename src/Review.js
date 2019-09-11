@@ -7,6 +7,7 @@ const Review = (props) => {
   let worstId = 0
   let worstWrong = 0
   let worstFront = ""
+  
   props.cards.map(
     card => (
       totalc += card.correct,
@@ -24,18 +25,19 @@ const Review = (props) => {
     }
   )
 
-  return (<div>
-            <div>
-              Total Correct: {totalc}
-            </div>
-            <div>
-              Total Wrong: {totalw}
-            </div>
-            <div>
-              Card that needs the most work (Front Side): {worstFront} 
-            </div>
-          </div>
-        )
+  return (
+    <div>
+      <div>
+        Total Correct: {totalc}
+      </div>
+      <div>
+        Total Wrong: {totalw}
+      </div>
+      <div>
+        Card that needs the most work (Front Side): {worstFront} 
+      </div>
+    </div>
+  )
 
 }
 
